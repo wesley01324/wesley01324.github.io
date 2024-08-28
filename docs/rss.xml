@@ -1,2 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Wesley's Blog</title><link>https://wesley01324.github.io</link><description>Work Record</description><copyright>Wesley's Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/45328420?v=4</url><title>avatar</title><link>https://wesley01324.github.io</link></image><lastBuildDate>Wed, 28 Aug 2024 05:50:33 +0000</lastBuildDate><managingEditor>Wesley's Blog</managingEditor><ttl>60</ttl><webMaster>Wesley's Blog</webMaster><item><title>Test Blog</title><link>https://wesley01324.github.io/post/Test%20Blog.html</link><description>### **This is my first blog**。</description><guid isPermaLink="true">https://wesley01324.github.io/post/Test%20Blog.html</guid><pubDate>Wed, 28 Aug 2024 03:59:20 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Wesley's Blog</title><link>https://wesley01324.github.io</link><description>Work Record</description><copyright>Wesley's Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/45328420?v=4</url><title>avatar</title><link>https://wesley01324.github.io</link></image><lastBuildDate>Wed, 28 Aug 2024 10:10:31 +0000</lastBuildDate><managingEditor>Wesley's Blog</managingEditor><ttl>60</ttl><webMaster>Wesley's Blog</webMaster><item><title>WebApi (Get)</title><link>https://wesley01324.github.io/post/WebApi%20%28Get%29.html</link><description>### 以一个获取生产订单为示例&#13;
+&#13;
+```&#13;
+public async Task&lt;ProPlan[]&gt; GetPlan()&#13;
+{&#13;
+    ProPlan[] plan;&#13;
+    string baseUrl = 'http://192.168.2.93:2000/api/json/Read';&#13;
+    using (HttpClient client = new HttpClient())&#13;
+    {&#13;
+        try&#13;
+        {&#13;
+            HttpResponseMessage response = await client.GetAsync(baseUrl);&#13;
+            response.EnsureSuccessStatusCode();&#13;
+            string responseData = await response.Content.ReadAsStringAsync();&#13;
+            var json = JsonConvert.DeserializeObject(responseData);&#13;
+            plan = JsonConvert.DeserializeObject&lt;ProPlan[]&gt;(json.ToString());&#13;
+            return plan;&#13;
+        }&#13;
+        catch (Exception ex)&#13;
+        {&#13;
+            Trace.WriteLine(ex.Message);&#13;
+            return InitData;&#13;
+        }&#13;
+    };&#13;
+}&#13;
+```。</description><guid isPermaLink="true">https://wesley01324.github.io/post/WebApi%20%28Get%29.html</guid><pubDate>Wed, 28 Aug 2024 10:10:07 +0000</pubDate></item><item><title>Test Blog</title><link>https://wesley01324.github.io/post/Test%20Blog.html</link><description>### **This is my first blog**。</description><guid isPermaLink="true">https://wesley01324.github.io/post/Test%20Blog.html</guid><pubDate>Wed, 28 Aug 2024 03:59:20 +0000</pubDate></item></channel></rss>
